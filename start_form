@@ -1,0 +1,37 @@
+
+<?php
+
+   $connection = mysqli_connect('localhost','root','','start_db');
+
+   if(isset($_POST['send'])){
+      $name = $_POST['name'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $address = $_POST['address'];
+      $company = $_POST['company'];
+      $years = $_POST['years'];
+      $starts = $_POST['starts'];
+      $leaving = $_POST['leaving'];
+
+
+
+
+
+
+
+      $request = " insert into start_form(name, email, phone, address, company,years, starts, leaving) values('$name','$email','$phone','$address','$company'.'$years',$starts','$leaving') ";
+      mysqli_query($connection, $request);
+
+      header('location:start.php'); 
+
+
+
+
+
+
+
+   }else{
+      echo 'something went wrong please try again!';
+   }
+
+?>
